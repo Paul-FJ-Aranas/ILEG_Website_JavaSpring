@@ -19,10 +19,10 @@ public class UserDao {
 	private NamedParameterJdbcTemplate jdbcData;
 
 	public User getUser(int id) {
-		
+
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("id", id);
-		
+
 		return jdbcData.queryForObject("select * from users where id =:id", params, new RowMapper<User>() {
 
 			@Override
@@ -32,8 +32,13 @@ public class UserDao {
 				user.setName(arg0.getString("name"));
 				user.setEmail(arg0.getString("email"));
 				return user;
-			}}
-				);
+			}
+		});
+	}
+
+	public boolean delete(int id) {
+		MapSqlParameterSource params = new MapSqlParameterSource("id", id);
+		return jdbcData.update("delete from users where id = :id;", params) ==1;
 	}
 
 	@Autowired
