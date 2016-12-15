@@ -9,15 +9,21 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
 
 @Component("userDao")
 public class UserDao {
 
-	private JdbcTemplate jdbcData;
+	private NamedParameterJdbcTemplate jdbcData;
 
-	public List<User> getUsers() {
-		return jdbcData.query("select * from users", new RowMapper<User>() {
+	public User getUser(int id) {
+		
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("id", id);
+		
+		return jdbcData.queryForObject("select * from users where id =:id", params, new RowMapper<User>() {
 
 			@Override
 			public User mapRow(ResultSet arg0, int arg1) throws SQLException {
@@ -28,13 +34,11 @@ public class UserDao {
 				return user;
 			}}
 				);
-		 
-		
 	}
 
 	@Autowired
 	public void setDataSource(DataSource jdbcData) {
-		this.jdbcData = new JdbcTemplate(jdbcData);
+		this.jdbcData = new NamedParameterJdbcTemplate(jdbcData);
 	}
 
 }
