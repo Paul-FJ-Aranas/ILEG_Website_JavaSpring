@@ -36,7 +36,10 @@ public class UserDao {
 			}
 		});
 	}
-
+	public boolean update(User user){
+		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(user);
+		return jdbcData.update("update users set name = :name, email = :email where id= :id", params) == 1;
+	}
 	public boolean delete(int id) {
 		MapSqlParameterSource params = new MapSqlParameterSource("id", id);
 		return jdbcData.update("delete from users where id = :id;", params) ==1;
