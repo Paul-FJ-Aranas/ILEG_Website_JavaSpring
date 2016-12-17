@@ -9,6 +9,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -39,6 +40,12 @@ public class UserDao {
 	public boolean delete(int id) {
 		MapSqlParameterSource params = new MapSqlParameterSource("id", id);
 		return jdbcData.update("delete from users where id = :id;", params) ==1;
+	}
+	
+	public boolean create(User user){
+		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(user);
+		return jdbcData.update("insert into users (name, email), values (:name, :email)", params) == 1;
+	
 	}
 
 	@Autowired
