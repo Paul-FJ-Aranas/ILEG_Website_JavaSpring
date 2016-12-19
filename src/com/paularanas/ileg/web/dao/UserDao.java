@@ -15,6 +15,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSourceUtils;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component("userDao")
 public class UserDao {
@@ -54,7 +55,7 @@ public class UserDao {
 		return jdbcData.update("insert into users (name, email), values (:name, :email)", params) == 1;
 
 	}
-
+	@Transactional
 	public int[] create(List<User> users) {
 		SqlParameterSource[] params = SqlParameterSourceUtils.createBatch(users.toArray());
 		return jdbcData.batchUpdate("insert into users (name, email), values (:name, :email)", params);

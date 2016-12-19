@@ -8,6 +8,7 @@
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
 		<config>WebContent/WEB-INF/ileg-servlet.xml</config>
+		<config>src/com/paularanas/ileg/web/container/dao-context.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
