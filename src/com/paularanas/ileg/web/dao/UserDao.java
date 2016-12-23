@@ -22,12 +22,9 @@ public class UserDao {
 
 	private NamedParameterJdbcTemplate jdbcData;
 
-	public User getUser(int id) {
+	public List<User> getUser() {
 
-		MapSqlParameterSource params = new MapSqlParameterSource();
-		params.addValue("id", id);
-
-		return jdbcData.queryForObject("select * from users where id =:id", params, new RowMapper<User>() {
+		return jdbcData.query("select * from users", new RowMapper<User>() {
 
 			@Override
 			public User mapRow(ResultSet arg0, int arg1) throws SQLException {

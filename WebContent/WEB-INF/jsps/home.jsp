@@ -6,17 +6,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>ILEG</title>
 </head>
 <body>
 	<p>Welcome!
-	<c:out value="${name}"></c:out>
+	
 </p>
-	<sql:query var="rs" dataSource="jdbc/ileg">
-select id, name, email from users
-</sql:query>
 
-	<c:forEach var="row" items="${rs.rows}">
+
+	<c:forEach var="row" items="${users}">
     ID: ${row.id}<br />
     Name: ${row.name}<br />
     Email: ${row.email}<br />
