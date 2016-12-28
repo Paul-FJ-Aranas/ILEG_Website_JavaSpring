@@ -16,24 +16,27 @@ import com.paularanas.ileg.web.service.UsersService;
 
 @Controller
 public class IlegController {
-	
+
 	private UsersService usersService;
-	
-	
+
 	@Autowired
 	public void setUsersService(UsersService usersService) {
 		this.usersService = usersService;
 	}
 
+	@RequestMapping("/users")
+	public String showUsers(Model model) {
 
-
-	@RequestMapping("/")
-	public String showHome(Model model) {
-		
 		List<User> currentUsers = usersService.getCurrentUser();
 		model.addAttribute("users", currentUsers);
 
-		return "home";
+		return "users";
+	}
+
+	@RequestMapping("/createuser")
+	public String createUser(Model model) {
+
+		return "createuser";
 	}
 
 }
