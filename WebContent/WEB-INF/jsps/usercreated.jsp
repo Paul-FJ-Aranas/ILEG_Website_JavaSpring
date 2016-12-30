@@ -7,15 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table>
-<form method="get" action="${pageContext.request.contextPath}/doCreate">
-
-<tr> <td>Name: </td><td><input name="name" type="text"/></td> </tr>
-<tr> <td>Email: </td><td><input name="email" type="text"/></td> </tr>
-<tr> <td></td><td><input value="Create User" type="submit"/></td> </tr>
-</form>
-</table>
-
-
+user created.
 </body>
 </html>

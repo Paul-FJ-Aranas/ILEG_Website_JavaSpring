@@ -38,5 +38,9 @@ public class IlegController {
 
 		return "createuser";
 	}
+	@RequestMapping("/docreate")
+	public String doCreate(Model model) {
 
+		return "usercreated";
+	}
 }
