@@ -3,41 +3,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
-<style type="text/css">
-div.form {
-	display: block;
-	text-align: center;
-}
-
-form {
-	display: inline-block;
-	text-align: left;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.usertable {
-	width: 400px padding: 10px;
-	border: 1px blue solid
-}
-
-input[type=text] {
-	width: 250px
-}
-
-.label {
-	text-align: right vertical-align: top
-}
-
-.button {
-	text-align: center
-}
-
-.formcontrol {
-	margin-left: 10px
-}
-</style>
+<link href="${pageContext.request.contextPath}/static/css/main.css/"
+	rel="stylesheet" type="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
