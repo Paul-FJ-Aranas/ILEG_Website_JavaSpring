@@ -14,21 +14,28 @@ form {
 
 .usertable {
 	width: 400px padding: 10px;
-	border: 1px blue solid
+	border: 1px blue solid;
 }
 
 input[type=text] {
-	width: 250px
+	width: 250px;
 }
 
 .label {
-	text-align: right vertical-align: top
+	text-align: right; 
+	vertical-align: top;
 }
 
 .button {
-	text-align: center
+	text-align: center;
 }
 
 .formcontrol {
-	margin-left: 10px
+	margin-left: 10px;
+}
+
+.error {
+	font-size: small;
+	color: red;
+	margin-left: 10px;
 }
