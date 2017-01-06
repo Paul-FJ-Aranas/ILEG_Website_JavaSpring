@@ -39,29 +39,23 @@ public class IlegController {
 
 	@RequestMapping("/createuser")
 	public String createUser(Model model) {
-
+		model.addAttribute("user", new User());
 		return "createuser";
 	}
 
 	@RequestMapping(value = "/docreate", method = RequestMethod.POST)
 	public String doCreate(Model model, @Valid User user, BindingResult result) {
-		
-		if(result.hasErrors()){
+
+		if (result.hasErrors()) {
 			System.out.println("This form fails to validate.");
-			
+
 			List<ObjectError> validationErrors = result.getAllErrors();
-			
-			for (ObjectError error : validationErrors){
+
+			for (ObjectError error : validationErrors) {
 				System.out.println(error.getDefaultMessage());
 			}
-			
-			
-			
+			return "createuser";
 		}
-		else {
-			System.out.println("This form has been validated.");
-		}
-
 		return "usercreated";
 	}
 }
