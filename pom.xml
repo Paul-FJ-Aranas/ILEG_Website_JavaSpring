@@ -82,5 +82,10 @@
   		<version>3.5.4-Final</version>
   		<type>pom</type>
   	</dependency>
+  	<dependency>
+  		<groupId>commons-validator</groupId>
+  		<artifactId>commons-validator</artifactId>
+  		<version>1.5.1</version>
+  	</dependency>
   </dependencies>
 </project>

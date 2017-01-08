@@ -5,6 +5,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.paularanas.ileg.web.validation.constraints.UserEmailValidation;
+
 public class User implements Serializable {
 
 	private static final long serialVersionUID = -7587069038063448569L;
@@ -12,7 +14,8 @@ public class User implements Serializable {
 	@Size(min=2, max = 75, message="Name must be between 2 and 75 characters")
 	private String name;
 	@NotNull
-	@Pattern(regexp=".*\\@.*\\..*", message="This doesn't seem like a valid email address. Try again")
+	//@Pattern(regexp=".*\\@.*\\..*", message="This doesn't seem like a valid email address. Try again")
+	@UserEmailValidation
 	private String email;
 
 	public User() {
