@@ -39,3 +39,7 @@ input[type=text] {
 	color: red;
 	margin-left: 10px;
 }
+table.users {
+	border-spacing: 20px;
+	border: 1px grey solid;	
+}
