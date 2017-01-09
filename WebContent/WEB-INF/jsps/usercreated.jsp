@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-user created.
+User created: <a href="${pageContext.request.contextPath}/users">click here to see users</a>
 </body>
 </html>

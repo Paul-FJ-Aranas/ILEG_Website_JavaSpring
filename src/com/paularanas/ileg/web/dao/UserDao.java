@@ -49,7 +49,7 @@ public class UserDao {
 
 	public boolean create(User user) {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(user);
-		return jdbcData.update("insert into users (name, email), values (:name, :email)", params) == 1;
+		return jdbcData.update("insert into users (name, email) values (:name, :email)", params) == 1;
 
 	}
 	@Transactional

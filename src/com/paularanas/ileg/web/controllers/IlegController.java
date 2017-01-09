@@ -56,6 +56,8 @@ public class IlegController {
 			}
 			return "createuser";
 		}
+		usersService.createUser(user);
+		
 		return "usercreated";
 	}
 }

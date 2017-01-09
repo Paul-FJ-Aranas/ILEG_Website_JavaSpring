@@ -18,5 +18,9 @@ public class UsersService {
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}
+	public void createUser(User user) {
+		userDao.create(user);
+		
+	}
 
 }
