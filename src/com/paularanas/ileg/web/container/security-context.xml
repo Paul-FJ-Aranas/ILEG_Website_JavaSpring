@@ -24,10 +24,16 @@
 			pattern="/createuser" />
 		<security:intercept-url access="permitAll"
 			pattern="/" />
+			<security:intercept-url access="permitAll"
+			pattern="/static/**" />
+			<security:intercept-url access="permitAll"
+			pattern="/loginpage" />
 		<security:intercept-url access="permitAll"
 			pattern="/users" />
 		<security:intercept-url access="denyAll"
 			pattern="/**" />
-		<security:form-login />
+		<security:form-login
+			authentication-failure-url="/loginpage?error=true"
+			login-page="/loginpage" />
 	</security:http>
 </beans>
