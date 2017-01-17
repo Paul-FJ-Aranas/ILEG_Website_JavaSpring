@@ -24,7 +24,7 @@ public class UserDao {
 
 	public List<User> getUser() {
 
-		return jdbcData.query("select * from users", new RowMapper<User>() {
+		return jdbcData.query("select * from usersonline", new RowMapper<User>() {
 
 			@Override
 			public User mapRow(ResultSet arg0, int arg1) throws SQLException {
@@ -44,18 +44,18 @@ public class UserDao {
 
 	public boolean delete(int id) {
 		MapSqlParameterSource params = new MapSqlParameterSource("id", id);
-		return jdbcData.update("delete from users where id = :id;", params) == 1;
+		return jdbcData.update("delete from usersonline where id = :id;", params) == 1;
 	}
 
 	public boolean create(User user) {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(user);
-		return jdbcData.update("insert into users (name, email) values (:name, :email)", params) == 1;
+		return jdbcData.update("insert into usersonline (name, email) values (:name, :email)", params) == 1;
 
 	}
 	@Transactional
 	public int[] create(List<User> users) {
 		SqlParameterSource[] params = SqlParameterSourceUtils.createBatch(users.toArray());
-		return jdbcData.batchUpdate("insert into users (name, email), values (:name, :email)", params);
+		return jdbcData.batchUpdate("insert into usersonline (name, email), values (:name, :email)", params);
 	}
 
 	@Autowired

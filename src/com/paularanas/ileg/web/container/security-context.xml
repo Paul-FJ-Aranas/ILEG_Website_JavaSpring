@@ -14,6 +14,9 @@
 					password="thisisanotherpassword" />
 			</security:user-service>
 		</security:authentication-provider>
+		<security:authentication-provider>
+			<security:jdbc-user-service data-source-ref="dataSource" />
+		</security:authentication-provider>
 	</security:authentication-manager>
 	<security:http>
 	<security:intercept-url access="isAuthenticated()"
