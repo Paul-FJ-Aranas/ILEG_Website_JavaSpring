@@ -21,7 +21,7 @@ public class LoginController {
 		return "newaccount";
 		
 	}
-	@RequestMapping("/establishAccount")
+	@RequestMapping("/establishaccount")
 	public String establishAccount(){
 		
 		return "accountestablished";
