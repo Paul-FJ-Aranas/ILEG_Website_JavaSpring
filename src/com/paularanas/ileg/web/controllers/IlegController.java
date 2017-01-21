@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.paularanas.ileg.web.dao.User;
+import com.paularanas.ileg.web.dao.UsersOnline;
 import com.paularanas.ileg.web.service.UsersService;
 
 @Controller
@@ -31,7 +31,7 @@ public class IlegController {
 	@RequestMapping("/users")
 	public String showUsers(Model model) {
 
-		List<User> currentUsers = usersService.getCurrentUser();
+		List<UsersOnline> currentUsers = usersService.getCurrentUser();
 		model.addAttribute("users", currentUsers);
 
 		return "users";
@@ -39,12 +39,12 @@ public class IlegController {
 
 	@RequestMapping("/createuser")
 	public String createUser(Model model) {
-		model.addAttribute("user", new User());
+		model.addAttribute("user", new UsersOnline());
 		return "createuser";
 	}
 
 	@RequestMapping(value = "/docreate", method = RequestMethod.POST)
-	public String doCreate(Model model, @Valid User user, BindingResult result) {
+	public String doCreate(Model model, @Valid UsersOnline user, BindingResult result) {
 
 		if (result.hasErrors()) {
 			System.out.println("This form fails to validate.");

@@ -31,6 +31,16 @@
 			pattern="/static/**" />
 			<security:intercept-url access="permitAll"
 			pattern="/loginpage" />
+			
+			<security:intercept-url access="permitAll"
+			pattern="/newaccount" />
+			<security:intercept-url access="permitAll"
+			pattern="/acountestablished" />
+			<security:intercept-url access="permitAll"
+			pattern="/establishaccount" />
+			
+			
+			
 		<security:intercept-url access="permitAll"
 			pattern="/users" />
 		<security:intercept-url access="denyAll"

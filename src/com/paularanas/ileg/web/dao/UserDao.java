@@ -22,13 +22,13 @@ public class UserDao {
 
 	private NamedParameterJdbcTemplate jdbcData;
 
-	public List<User> getUser() {
+	public List<UsersOnline> getUser() {
 
-		return jdbcData.query("select * from usersonline", new RowMapper<User>() {
+		return jdbcData.query("select * from usersonline", new RowMapper<UsersOnline>() {
 
 			@Override
-			public User mapRow(ResultSet arg0, int arg1) throws SQLException {
-				User user = new User();
+			public UsersOnline mapRow(ResultSet arg0, int arg1) throws SQLException {
+				UsersOnline user = new UsersOnline();
 				user.setId(arg0.getInt("id"));
 				user.setName(arg0.getString("name"));
 				user.setEmail(arg0.getString("email"));
@@ -37,7 +37,7 @@ public class UserDao {
 		});
 	}
 
-	public boolean update(User user) {
+	public boolean update(UsersOnline user) {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(user);
 		return jdbcData.update("update users set name = :name, email = :email where id= :id", params) == 1;
 	}
@@ -47,13 +47,13 @@ public class UserDao {
 		return jdbcData.update("delete from usersonline where id = :id;", params) == 1;
 	}
 
-	public boolean create(User user) {
+	public boolean create(UsersOnline user) {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(user);
 		return jdbcData.update("insert into usersonline (name, email) values (:name, :email)", params) == 1;
 
 	}
 	@Transactional
-	public int[] create(List<User> users) {
+	public int[] create(List<UsersOnline> users) {
 		SqlParameterSource[] params = SqlParameterSourceUtils.createBatch(users.toArray());
 		return jdbcData.batchUpdate("insert into usersonline (name, email), values (:name, :email)", params);
 	}
