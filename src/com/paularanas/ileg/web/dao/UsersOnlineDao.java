@@ -17,8 +17,8 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSourceUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-@Component("userDao")
-public class UserDao {
+@Component("usersOnlineDao")
+public class UsersOnlineDao {
 
 	private NamedParameterJdbcTemplate jdbcData;
 

@@ -16,15 +16,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.paularanas.ileg.web.dao.UsersOnline;
-import com.paularanas.ileg.web.service.UsersService;
+import com.paularanas.ileg.web.service.UsersOnlineService;
 
 @Controller
 public class IlegController {
 
-	private UsersService usersService;
+	private UsersOnlineService usersService;
 
 	@Autowired
-	public void setUsersService(UsersService usersService) {
+	public void setUsersService(UsersOnlineService usersService) {
 		this.usersService = usersService;
 	}
 

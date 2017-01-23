@@ -1,25 +1,21 @@
 package com.paularanas.ileg.web.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.paularanas.ileg.web.dao.UsersOnline;
-import com.paularanas.ileg.web.dao.UserDao;
+import com.paularanas.ileg.web.dao.User;
+import com.paularanas.ileg.web.dao.UsersDao;
 
 @Service("usersService")
 public class UsersService {
-	private UserDao userDao;
-	public List<UsersOnline> getCurrentUser(){
-		return userDao.getUser();
-	}
+	private UsersDao usersDao;
+
 	@Autowired
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
+	public void setUserDao(UsersDao userDao) {
+		this.usersDao = userDao;
 	}
-	public void createUser(UsersOnline user) {
-		userDao.create(user);
+	public void createUser(User user) {
+		usersDao.create(user);
 		
 	}
 

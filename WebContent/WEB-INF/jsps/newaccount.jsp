@@ -8,9 +8,11 @@
 <link href="${pageContext.request.contextPath}/static/css/main.css/"
 	rel="stylesheet" type="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Create New Account</title>
 </head>
 <body>
+
+<h2>Create New Account</h2>
 	<div class="form">
 		<sform:form method="post"
 			action="${pageContext.request.contextPath}/establishaccount" commandName="user">
