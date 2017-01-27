@@ -54,7 +54,7 @@ public class LoginController {
 			for (ObjectError error : validationErrors) {
 				System.out.println(error.getDefaultMessage());
 			}
-			return "createaccount";
+			return "newaccount";
 		}
 		usersService.createUser(user);
 		

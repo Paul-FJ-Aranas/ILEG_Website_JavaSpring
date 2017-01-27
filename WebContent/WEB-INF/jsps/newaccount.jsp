@@ -19,15 +19,15 @@
 			<table class="usertable">
 				<tr>
 					<td class="label">Name:</td>
-					<td><sform:input class="formcontrol" path="username" name="username" type="text" /><br/><sform:errors path="username" cssClass="error"></sform:errors></td>
+					<td><sform:input class="formcontrol" path="username" name="username" type="text" /><br/><div class="error"><sform:errors path="username"></sform:errors></div></td>
 				</tr>
 				<tr>
 					<td class="label">Email:</td>
-					<td><sform:input class="formcontrol" path="email" name="email" type="text" /><br/><sform:errors path="email" cssClass="error"></sform:errors></td>
+					<td><sform:input class="formcontrol" path="email" name="email" type="text" /><br/><div class="error"><sform:errors path="email"></sform:errors></div></td>
 				</tr>
 				<tr>
 					<td class="label">Password:</td>
-					<td><sform:input class="formcontrol" path="password" name="password" type="text" /><br/><sform:errors path="password" cssClass="error"></sform:errors></td>
+					<td><sform:input class="formcontrol" path="password" name="password" type="text" /><br/><div class="error"><sform:errors path="password"></sform:errors></div></td>
 				</tr>
 				<tr>
 					<td class="label">Confirm Password:</td>
