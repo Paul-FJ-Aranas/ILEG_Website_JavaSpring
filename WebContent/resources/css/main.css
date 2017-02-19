@@ -13,7 +13,7 @@ form {
 }
 
 .usertable {
-	width: 400px padding: 10px;
+	width: 600px padding: 10px;
 	border: 1px blue solid;
 }
 
@@ -33,7 +33,11 @@ input[type=text] {
 .formcontrol {
 	margin-left: 10px;
 }
-
+.validpass {
+	font-size: small;
+	color: green;
+	margin-left: 10px;
+}
 .error {
 	font-size: small;
 	color: red;
