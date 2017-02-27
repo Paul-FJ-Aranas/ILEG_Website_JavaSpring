@@ -11,7 +11,7 @@ public class UsersOnline implements Serializable {
 
 	private static final long serialVersionUID = -7587069038063448569L;
 	private int id;
-	@Size(min=2, max = 75, message="Name must be between 2 and 75 characters")
+	@Size(min=2, max = 75)
 	private String name;
 	@NotNull
 	//@Pattern(regexp=".*\\@.*\\..*", message="This doesn't seem like a valid email address. Try again")

@@ -9,16 +9,16 @@ import org.hibernate.validator.constraints.NotBlank;
 import com.paularanas.ileg.web.validation.constraints.UserEmailValidation;
 
 public class User {
-	@Size(min = 7, max = 18, message = "Username must be between 7 and 18 characters")
-	@NotBlank(message = "Cannot be blank")
-	@Pattern(regexp = "^\\w{8,}$",message="Username cannot contain spaces")
+	@Size(min = 7, max = 18)
+	@NotBlank
+	@Pattern(regexp = "^\\w{8,}$")
 	private String username;
-	@Size(min = 7, max = 18, message = "Password must be between 7 and 18 characters")
-	@NotBlank(message = "Cannot be blank")
-	@Pattern(regexp = "^\\{8,}$", message="Password must not contain spaces")
+	@Size(min = 7, max = 18)
+	@NotBlank
+	@Pattern(regexp = "^\\{8,}$")
 	private String password;
 
-	@UserEmailValidation(message = "This appears to be an invalid email")
+	@UserEmailValidation
 	private String email;
 	private String authority;
 	private boolean enabled = false;
