@@ -34,4 +34,8 @@ public class UsersDao {
 		this.jdbcData = new NamedParameterJdbcTemplate(jdbcData);
 	}
 
+	public boolean exists(String username) {
+		return jdbcData.queryForObject("select count(*) from users where username=:username", new MapSqlParameterSource("username",username), Integer.class) > 0;
+	}
+
 }

@@ -15,7 +15,7 @@ public class User {
 	private String username;
 	@Size(min = 7, max = 18)
 	@NotBlank
-	@Pattern(regexp = "^\\{8,}$")
+	@Pattern(regexp = "^\\w{8,}$")
 	private String password;
 
 	@UserEmailValidation
