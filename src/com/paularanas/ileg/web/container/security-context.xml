@@ -28,6 +28,8 @@
 		<security:intercept-url access="permitAll"
 			pattern="/" />
 			<security:intercept-url access="permitAll"
+			pattern="/loggedout" />
+			<security:intercept-url access="permitAll"
 			pattern="/static/**" />
 			<security:intercept-url access="permitAll"
 			pattern="/loginpage" />
@@ -48,5 +50,6 @@
 		<security:form-login
 			authentication-failure-url="/loginpage?error=true"
 			login-page="/loginpage" />
+		<security:logout logout-success-url="/loggedout" />
 	</security:http>
 </beans>

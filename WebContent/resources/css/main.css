@@ -20,7 +20,9 @@ form {
 input[type=text] {
 	width: 250px;
 }
-
+input[type=password] {
+	width: 250px;
+}
 .label {
 	text-align: right; 
 	vertical-align: top;
