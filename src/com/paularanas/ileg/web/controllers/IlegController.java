@@ -42,6 +42,11 @@ public class IlegController {
 		model.addAttribute("user", new UsersOnline());
 		return "createuser";
 	}
+	
+	@RequestMapping("/commentary")
+	public String showCommentary() {
+		return "commentary";
+	}
 
 	@RequestMapping(value = "/docreate", method = RequestMethod.POST)
 	public String doCreate(Model model, @Valid UsersOnline user, BindingResult result) {
